@@ -1,0 +1,177 @@
+[gd_scene format=4 uid="uid://towe6jtciome"]
+
+[ext_resource type="PackedScene" uid="uid://bjntpxb1c8jxn" path="res://Scenes/Levels/base_level.tscn" id="1_base"]
+[ext_resource type="PackedScene" uid="uid://b46lxwc5r3dy4" path="res://Scenes/Levels/game_win.tscn" id="2_next"]
+[ext_resource type="TileSet" uid="uid://bvk6vx5i1riqd" path="res://Scenes/Prefabs/ground_tile_set.tres" id="3_tiles"]
+[ext_resource type="PackedScene" uid="uid://cb8e62red7kc0" path="res://Scenes/Prefabs/trap_1.tscn" id="4_saw"]
+[ext_resource type="PackedScene" uid="uid://bp4l1nlnh8oq1" path="res://Scenes/Prefabs/trap_2.tscn" id="5_arm"]
+[ext_resource type="PackedScene" uid="uid://bfmh3fm2de78o" path="res://Scenes/Prefabs/coin.tscn" id="6_coin"]
+[ext_resource type="PackedScene" uid="uid://dabag2r57aued" path="res://Scenes/Prefabs/heal_potion.tscn" id="7_potion"]
+[ext_resource type="PackedScene" uid="uid://ek7hxkqp2wff" path="res://Scenes/Actors/monster_slim.tscn" id="8_slime"]
+[ext_resource type="PackedScene" uid="uid://b48s52q3f64kl" path="res://Scenes/Actors/monster_mushroom.tscn" id="9_mush"]
+[ext_resource type="Theme" uid="uid://d3eng5cvycmjf" path="res://Scenes/Prefabs/theme.tres" id="10_theme"]
+
+[node name="BaseLevel" unique_id=1997201631 instance=ExtResource("1_base")]
+
+[node name="LevelFinishDoor" parent="." index="0" unique_id=1788542095]
+position = Vector2(2912, 400)
+next_scene = ExtResource("2_next")
+
+[node name="Background1" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="0" unique_id=1072429833]
+metadata/_edit_lock_ = true
+
+[node name="Ground" type="TileMapLayer" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="1" unique_id=647673462]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAD+/wAAAAADAAEAAAD+/wEAAAADAAEAAAD+/wIAAAADAAEAAAD+/wMAAAADAAEAAAD+/wQAAAADAAEAAAD+/wUAAAADAAEAAAD+/wYAAAADAAEAAAD+/wcAAAADAAEAAAD+/wgAAAADAAEAAAD+/wkAAAADAAEAAAD+/woAAAADAAEAAAD//wcAAAAAAAEAAAD//wgAAAADAAEAAAD//wkAAAADAAEAAAD//woAAAADAAEAAAAAAAcAAAAAAAEAAAAAAAgAAAADAAEAAAAAAAkAAAADAAEAAAAAAAoAAAADAAEAAAABAAcAAAAAAAEAAAABAAgAAAADAAEAAAABAAkAAAADAAEAAAABAAoAAAADAAEAAAACAAcAAAAAAAEAAAACAAgAAAADAAEAAAACAAkAAAADAAEAAAACAAoAAAADAAEAAAADAAcAAAAAAAEAAAADAAgAAAADAAEAAAADAAkAAAADAAEAAAADAAoAAAADAAEAAAAEAAcAAAAAAAEAAAAEAAgAAAADAAEAAAAEAAkAAAADAAEAAAAEAAoAAAADAAEAAAAFAAcAAAAAAAEAAAAFAAgAAAADAAEAAAAFAAkAAAADAAEAAAAFAAoAAAADAAEAAAAGAAYAAAAAAAEAAAAHAAYAAAAAAAEAAAAIAAcAAAAAAAEAAAAIAAgAAAADAAEAAAAIAAkAAAADAAEAAAAIAAoAAAADAAEAAAAJAAcAAAAAAAEAAAAJAAgAAAADAAEAAAAJAAkAAAADAAEAAAAJAAoAAAADAAEAAAAKAAcAAAAAAAEAAAAKAAgAAAADAAEAAAAKAAkAAAADAAEAAAAKAAoAAAADAAEAAAALAAcAAAAAAAEAAAALAAgAAAADAAEAAAALAAkAAAADAAEAAAALAAoAAAADAAEAAAAMAAcAAAAAAAEAAAAMAAgAAAADAAEAAAAMAAkAAAADAAEAAAAMAAoAAAADAAEAAAAPAAcAAAAAAAEAAAAPAAgAAAADAAEAAAAPAAkAAAADAAEAAAAPAAoAAAADAAEAAAAQAAcAAAAAAAEAAAAQAAgAAAADAAEAAAAQAAkAAAADAAEAAAAQAAoAAAADAAEAAAARAAcAAAAAAAEAAAARAAgAAAADAAEAAAARAAkAAAADAAEAAAARAAoAAAADAAEAAAASAAcAAAAAAAEAAAASAAgAAAADAAEAAAASAAkAAAADAAEAAAASAAoAAAADAAEAAAATAAYAAAAAAAEAAAAUAAYAAAAAAAEAAAAVAAcAAAAAAAEAAAAVAAgAAAADAAEAAAAVAAkAAAADAAEAAAAVAAoAAAADAAEAAAAWAAcAAAAAAAEAAAAWAAgAAAADAAEAAAAWAAkAAAADAAEAAAAWAAoAAAADAAEAAAAXAAcAAAAAAAEAAAAXAAgAAAADAAEAAAAXAAkAAAADAAEAAAAXAAoAAAADAAEAAAAYAAcAAAAAAAEAAAAYAAgAAAADAAEAAAAYAAkAAAADAAEAAAAYAAoAAAADAAEAAAAZAAcAAAAAAAEAAAAZAAgAAAADAAEAAAAZAAkAAAADAAEAAAAZAAoAAAADAAEAAAAaAAcAAAAAAAEAAAAaAAgAAAADAAEAAAAaAAkAAAADAAEAAAAaAAoAAAADAAEAAAAdAAcAAAAAAAEAAAAdAAgAAAADAAEAAAAdAAkAAAADAAEAAAAdAAoAAAADAAEAAAAeAAcAAAAAAAEAAAAeAAgAAAADAAEAAAAeAAkAAAADAAEAAAAeAAoAAAADAAEAAAAfAAcAAAAAAAEAAAAfAAgAAAADAAEAAAAfAAkAAAADAAEAAAAfAAoAAAADAAEAAAAgAAcAAAAAAAEAAAAgAAgAAAADAAEAAAAgAAkAAAADAAEAAAAgAAoAAAADAAEAAAAhAAcAAAAAAAEAAAAhAAgAAAADAAEAAAAhAAkAAAADAAEAAAAhAAoAAAADAAEAAAAiAAYAAAAAAAEAAAAjAAYAAAAAAAEAAAAkAAcAAAAAAAEAAAAkAAgAAAADAAEAAAAkAAkAAAADAAEAAAAkAAoAAAADAAEAAAAlAAcAAAAAAAEAAAAlAAgAAAADAAEAAAAlAAkAAAADAAEAAAAlAAoAAAADAAEAAAAmAAcAAAAAAAEAAAAmAAgAAAADAAEAAAAmAAkAAAADAAEAAAAmAAoAAAADAAEAAAAnAAcAAAAAAAEAAAAnAAgAAAADAAEAAAAnAAkAAAADAAEAAAAnAAoAAAADAAEAAAAoAAcAAAAAAAEAAAAoAAgAAAADAAEAAAAoAAkAAAADAAEAAAAoAAoAAAADAAEAAAArAAcAAAAAAAEAAAArAAgAAAADAAEAAAArAAkAAAADAAEAAAArAAoAAAADAAEAAAAsAAcAAAAAAAEAAAAsAAgAAAADAAEAAAAsAAkAAAADAAEAAAAsAAoAAAADAAEAAAAtAAcAAAAAAAEAAAAtAAgAAAADAAEAAAAtAAkAAAADAAEAAAAtAAoAAAADAAEAAAAuAAcAAAAAAAEAAAAuAAgAAAADAAEAAAAuAAkAAAADAAEAAAAuAAoAAAADAAEAAAAvAAcAAAAAAAEAAAAvAAgAAAADAAEAAAAvAAkAAAADAAEAAAAvAAoAAAADAAEAAAA=")
+tile_set = ExtResource("3_tiles")
+
+[node name="Background2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="2" unique_id=1070008654]
+metadata/_edit_lock_ = true
+
+[node name="Saw1" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="3" unique_id=710000047 instance=ExtResource("4_saw")]
+position = Vector2(224, 456)
+
+[node name="Saw2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="4" unique_id=710000048 instance=ExtResource("4_saw")]
+position = Vector2(672, 456)
+
+[node name="Saw3" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="5" unique_id=710000049 instance=ExtResource("4_saw")]
+position = Vector2(1568, 456)
+
+[node name="Saw4" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="6" unique_id=710000050 instance=ExtResource("4_saw")]
+position = Vector2(2016, 456)
+
+[node name="Saw5" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="7" unique_id=710000051 instance=ExtResource("4_saw")]
+position = Vector2(2464, 456)
+
+[node name="Saw6" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="8" unique_id=710000052 instance=ExtResource("4_saw")]
+position = Vector2(2912, 456)
+
+[node name="Arm1" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="9" unique_id=710000053 instance=ExtResource("5_arm")]
+position = Vector2(736, 170)
+
+[node name="Arm2" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="10" unique_id=710000054 instance=ExtResource("5_arm")]
+position = Vector2(2080, 170)
+
+[node name="Arm3" parent="Level" parent_id_path=PackedInt32Array(1752500785) index="11" unique_id=710000055 instance=ExtResource("5_arm")]
+position = Vector2(2528, 170)
+
+[node name="HealPotion1" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="0" unique_id=710000056 instance=ExtResource("7_potion")]
+position = Vector2(1120, 395)
+
+[node name="HealPotion2" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="1" unique_id=710000057 instance=ExtResource("7_potion")]
+position = Vector2(1952, 395)
+
+[node name="Coin1" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="2" unique_id=710000058 instance=ExtResource("6_coin")]
+position = Vector2(352, 330)
+
+[node name="Coin2" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="3" unique_id=710000059 instance=ExtResource("6_coin")]
+position = Vector2(416, 330)
+
+[node name="Coin3" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="4" unique_id=710000060 instance=ExtResource("6_coin")]
+position = Vector2(480, 330)
+
+[node name="Coin4" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="5" unique_id=710000061 instance=ExtResource("6_coin")]
+position = Vector2(544, 330)
+
+[node name="Coin5" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="6" unique_id=710000062 instance=ExtResource("6_coin")]
+position = Vector2(800, 330)
+
+[node name="Coin6" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="7" unique_id=710000063 instance=ExtResource("6_coin")]
+position = Vector2(864, 330)
+
+[node name="Coin7" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="8" unique_id=710000064 instance=ExtResource("6_coin")]
+position = Vector2(928, 330)
+
+[node name="Coin8" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="9" unique_id=710000065 instance=ExtResource("6_coin")]
+position = Vector2(992, 330)
+
+[node name="Coin9" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="10" unique_id=710000066 instance=ExtResource("6_coin")]
+position = Vector2(1184, 300)
+
+[node name="Coin10" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="11" unique_id=710000067 instance=ExtResource("6_coin")]
+position = Vector2(1248, 300)
+
+[node name="Coin11" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="12" unique_id=710000068 instance=ExtResource("6_coin")]
+position = Vector2(1312, 300)
+
+[node name="Coin12" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="13" unique_id=710000069 instance=ExtResource("6_coin")]
+position = Vector2(1376, 300)
+
+[node name="Coin13" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="14" unique_id=710000070 instance=ExtResource("6_coin")]
+position = Vector2(1696, 330)
+
+[node name="Coin14" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="15" unique_id=710000071 instance=ExtResource("6_coin")]
+position = Vector2(1760, 330)
+
+[node name="Coin15" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="16" unique_id=710000072 instance=ExtResource("6_coin")]
+position = Vector2(1824, 330)
+
+[node name="Coin16" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="17" unique_id=710000073 instance=ExtResource("6_coin")]
+position = Vector2(1888, 330)
+
+[node name="Coin17" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="18" unique_id=710000074 instance=ExtResource("6_coin")]
+position = Vector2(2144, 330)
+
+[node name="Coin18" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="19" unique_id=710000075 instance=ExtResource("6_coin")]
+position = Vector2(2208, 330)
+
+[node name="Coin19" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="20" unique_id=710000076 instance=ExtResource("6_coin")]
+position = Vector2(2272, 330)
+
+[node name="Coin20" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="21" unique_id=710000077 instance=ExtResource("6_coin")]
+position = Vector2(2336, 330)
+
+[node name="Coin21" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="22" unique_id=710000078 instance=ExtResource("6_coin")]
+position = Vector2(2592, 330)
+
+[node name="Coin22" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="23" unique_id=710000079 instance=ExtResource("6_coin")]
+position = Vector2(2656, 330)
+
+[node name="Coin23" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="24" unique_id=710000080 instance=ExtResource("6_coin")]
+position = Vector2(2720, 330)
+
+[node name="Coin24" parent="Coins" parent_id_path=PackedInt32Array(1530662565) index="25" unique_id=710000081 instance=ExtResource("6_coin")]
+position = Vector2(2784, 330)
+
+[node name="Slime1" parent="Enemies" parent_id_path=PackedInt32Array(1580630701) index="0" unique_id=710000082 instance=ExtResource("8_slime")]
+position = Vector2(608, 440)
+speed = 30
+
+[node name="Slime2" parent="Enemies" parent_id_path=PackedInt32Array(1580630701) index="1" unique_id=710000083 instance=ExtResource("8_slime")]
+position = Vector2(1504, 440)
+speed = 30
+
+[node name="Slime3" parent="Enemies" parent_id_path=PackedInt32Array(1580630701) index="2" unique_id=710000084 instance=ExtResource("8_slime")]
+position = Vector2(2400, 440)
+speed = 30
+
+[node name="Mushroom1" parent="Enemies" parent_id_path=PackedInt32Array(1580630701) index="3" unique_id=710000085 instance=ExtResource("9_mush")]
+position = Vector2(1056, 440)
+speed = 30
+
+[node name="Mushroom2" parent="Enemies" parent_id_path=PackedInt32Array(1580630701) index="4" unique_id=710000086 instance=ExtResource("9_mush")]
+position = Vector2(2016, 440)
+speed = 30
+
+[node name="Mushroom3" parent="Enemies" parent_id_path=PackedInt32Array(1580630701) index="5" unique_id=710000087 instance=ExtResource("9_mush")]
+position = Vector2(2848, 440)
+speed = 30
+
+[node name="Label" parent="UserInterface" parent_id_path=PackedInt32Array(1799764374) index="1" unique_id=1103718868]
+offset_left = -99.0
+offset_top = -39.5
+offset_right = 99.0
+offset_bottom = 39.5
+theme_override_colors/font_color = Color(0.5529412, 0.38431373, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+text = "Level 3"
+horizontal_alignment = 1
+
+[node name="Label1" type="Label" parent="Text" parent_id_path=PackedInt32Array(416249055) index="0" unique_id=710000088]
+offset_left = -30.0
+offset_top = 80.0
+offset_right = 390.0
+offset_bottom = 190.0
+theme = ExtResource("10_theme")
+text = "ด่าน 3 : ด่านสุดท้าย!\nผ่านทุกอย่างไปให้ได้ แล้วเข้าประตู"
